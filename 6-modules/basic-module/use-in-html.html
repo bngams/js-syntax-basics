@@ -1,0 +1,8 @@
+<!doctype html>
+<script type="module">
+	/* As modules support special keywords and features, we must tell the browser that a script should be treated as a module, by using the attribute <script type="module">. */
+	
+  import {sayHi} from './hello.js';
+
+  document.body.innerHTML = sayHi('World');
+</script>

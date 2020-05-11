@@ -1,0 +1,10 @@
+Old school approach to mordern approach
+https://www.freecodecamp.org/news/javascript-modules-a-beginner-s-guide-783f7d7a5fcc/
+
+Intro + ES Modules
+https://javascript.info/modules-intro
+
+ES Modules
+https://flaviocopes.com/es-modules/
+https://exploringjs.com/es6/ch_modules.html
+
