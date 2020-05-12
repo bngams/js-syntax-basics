@@ -28,5 +28,8 @@ async function awaitAsyncCall() {
 	//
 	let result = await request();
 	let result2 = await request();
+	otherMethod(result, result2);
 }
 awaitAsyncCall();
+
+

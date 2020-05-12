@@ -22,6 +22,7 @@ xhr.onreadystatechange = function() {
         displayResult(xhr.responseText);          
     } else if (xhr.readyState === 4) {
         // error
+        // displayError
     }
 }
 // execute request

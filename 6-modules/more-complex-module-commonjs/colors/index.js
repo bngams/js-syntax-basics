@@ -1,3 +1,5 @@
+var Color = require('Color');
+
 const allColors = [
   new Color('brightred', '#E74C3C'),
   new Color('soothingpurple', '#9B59B6'),

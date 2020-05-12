@@ -8,5 +8,14 @@ function myModule() {
   }
 }
 
+class User {
+
+}
+
+exports = User;
+
+exports.options = ['value', 'etc']
+
 module.exports = myModule;
-// or module.exports.myModule = myModule;
+// exports = myModule
+// module.exports.myModuleName = myModule;

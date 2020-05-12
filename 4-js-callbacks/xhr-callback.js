@@ -16,7 +16,7 @@ function xhr(method, url, success, error) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // traitement
             console.log("bloc treatment");
-            success(xhr.responseText, xhr.status);
+            success(xhr.responseText);
         } else if (xhr.readyState === 4) {
             // error            
             error({ msg: xhr.responseText });
@@ -26,4 +26,12 @@ function xhr(method, url, success, error) {
     xhr.send();
 }
 
-xhr("get", "https://jsonplaceholder.typicode.com/todos/1", displayResult, displayError);
+xhr("get", 
+    "https://jsonplaceholder.typicode.com/todos/1", 
+    displayResult, 
+    displayError);
+
+xhr("get", 
+    "https://jsonplaceholder.typicode.com/todos", 
+    () => { }, 
+    () => { });

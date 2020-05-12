@@ -2,6 +2,10 @@
  * Replace callback with promise
  */
 
+function doSomething() {
+	console.log("do something");
+}
+
 function withCallback(callback) {
 	// traitement async
 	setTimeout(function() {
@@ -10,24 +14,52 @@ function withCallback(callback) {
 	}, 3000);
 }
 
-function withPromise() {
-	// traitement async
+// with callback
+withCallback(() => console.log('test'));
+
+// do treatment with callback
+withCallback(doSomething());
+
+// what is a promise object
+const myPromise = new Promise((resolve, reject) => {
 	setTimeout(function() {
-		return new Promise((resolve, reject) => {
+		// trigger 
+    	resolve();
+	}, 3000);
+});
+// resolve
+myPromise.then(() => {
+	console.log("promise is resolved")
+}); 
+//reject
+myPromise.catch(() => {
+
+});
+
+function withPromise(param1, param2) {
+	// traitement async
+	return new Promise((resolve, reject) => {
+		setTimeout(function() {
 			if(true)
 				resolve({});
 			else
 				reject({});
-		});
-	}, 3000);
+		}, 3000);
+	});
 }
 
-function doSomething() {
-	console.log("do something");
-}
+// first syntax
+const myPromiseObject = withPromise();
+myPromiseObject.then();
 
-// do treatment with callback
-withCallback(doSomething());
+// other syntax (programmation fonctionnelle)
+withPromise()
+	.then((res) => {
+		withOtherPromise(res).
+			.then()
+	}).catch() 
+
+
 
 // do treatment with promise
 let myPromise = withPromise();
