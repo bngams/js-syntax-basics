@@ -1,4 +1,5 @@
-var Color = require('Color');
+var Color = require('colors.js').color;
+console.log(Color);
 
 const allColors = [
   new Color('brightred', '#E74C3C'),
@@ -8,6 +9,11 @@ const allColors = [
   new Color('sunkissedyellow', '#F4D03F'),
   new Color('groovygray', '#D7DBDD'),
 ];
+
+// var getRandomColor = function() {
+//   return allColors[Math.floor(Math.random() * allColors.length)];
+// }
+// exports.getRandomColor = getRandomColor;
 
 exports.getRandomColor = () => {
   return allColors[Math.floor(Math.random() * allColors.length)];

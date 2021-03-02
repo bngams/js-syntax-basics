@@ -16,5 +16,20 @@ var myCallback = function(arg) {
 }
 setTimeout(myCallback("Done!"), 5000);
 
+// convention success / error
+var myCallbackSuccess = function (arg) {
+    console.log("Result is " + arg);
+}
+var myCallbackError = function (arg) {
+    console.log("Result is " + arg);
+}
+setTimeout(() => {
+    if(true) {
+        myCallbackSuccess();
+    } else {
+        myCallbackError();
+    }
+}, 5000);
+
 // Many callbacks can be difficult to manage
 // http://callbackhell.com/

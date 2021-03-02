@@ -1,0 +1,1 @@
+const http = require('http'); // "importer" un module JS

@@ -4,7 +4,15 @@ const http = require('http');
 let server = http.createServer(); // Event (EventEmitter)
 
 // request event, with callback
+
 server.on('request', (req, res) => {
+
+	// if URL == '/articles'
+	if(req.url == '/articles' && req.method == GET) {
+		// 
+		console.log('call on articles');
+	}
+
 	// req => http.incomingMessage
 			// params
 	// req => Stream -> ReadableStream
@@ -22,14 +30,14 @@ server.on('request', (req, res) => {
 	// res => http.serverResponse
 			// html, json
 	// res => Stream -> Writeable stream
-	res.statusCode = 200;
+	// res.statusCode = 200;
 	// res.setHeader('Content-type', 'application/json');
 	res.writeHead(200, {
 		'Content-type': 'application/json',
 		'property': 'value'
 	});
 	// JSON.stringify(obj);
-	res.write('body');
+	res.write(JSON.stringify({title: 'hello'}));
 	res.end();
 });
 

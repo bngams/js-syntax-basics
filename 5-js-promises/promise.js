@@ -5,12 +5,15 @@
 function doSomething() {
 	console.log("do something");
 }
+// let doSomething = function() {
+
+// }
 
 function withCallback(callback) {
 	// traitement async
-	setTimeout(function() {
+	setTimeout(function () {
 		// trigger callback when treatment is done
-    	callback();
+		callback();
 	}, 3000);
 }
 
@@ -22,15 +25,19 @@ withCallback(doSomething());
 
 // what is a promise object
 const myPromise = new Promise((resolve, reject) => {
-	setTimeout(function() {
-		// trigger 
-    	resolve();
+	setTimeout(function () {
+		if (true) {
+			// trigger 
+			resolve();
+		} else {
+			reject();
+		}
 	}, 3000);
 });
 // resolve
 myPromise.then(() => {
 	console.log("promise is resolved")
-}); 
+});
 //reject
 myPromise.catch(() => {
 
@@ -39,8 +46,8 @@ myPromise.catch(() => {
 function withPromise(param1, param2) {
 	// traitement async
 	return new Promise((resolve, reject) => {
-		setTimeout(function() {
-			if(true)
+		setTimeout(function () {
+			if (true)
 				resolve({});
 			else
 				reject({});
@@ -57,7 +64,7 @@ withPromise()
 	.then((res) => {
 		withOtherPromise(res).
 			.then()
-	}).catch() 
+	}).catch()
 
 
 
@@ -65,11 +72,11 @@ withPromise()
 let myPromise = withPromise();
 
 // get data when promise resolved
-myPromise.then( (data) => {
+myPromise.then((data) => {
 	// ...
 })
 
 // get data on promise error
-myPromise.catch( (data) => {
+myPromise.catch((data) => {
 	// ...
 })

@@ -1,12 +1,13 @@
 class User {
-	constructor(firstname, lastname) {
-	    this.firstname = firstname;
-	    this.lastname = lastname;
-	}
+  
+  constructor(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
 
-	toString() {
-		return this.firstname + ' ' + this.lastname;
-	}
+  toString() {
+    return this.firstname + ' ' + this.lastname;
+  }
 }
 
 

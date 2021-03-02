@@ -11,7 +11,7 @@ var user = {
     children: [
         {},
         {}
-    ]
+    ],
 };
 
 // constructor pattern

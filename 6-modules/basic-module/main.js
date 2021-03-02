@@ -1,3 +1,3 @@
-import {sayHi} from './hello.js';
-
+import { sayHi } from './hello.js';
+// log() // X
 sayHi('World'); // Hello, World!
