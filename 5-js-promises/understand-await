@@ -1,0 +1,42 @@
+function attendre(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function verifierStock(produit) {
+    console.log(`Vérification du stock pour ${produit}...`);
+    await attendre(Math.random() * 2000 + 1000);
+    console.log(`✔️ Stock disponible pour ${produit}`);
+}
+
+async function validerPaiement(produit) {
+    console.log(`Validation du paiement pour ${produit}...`);
+    await attendre(Math.random() * 1000 + 1000);
+    console.log(`✔️ Paiement validé pour ${produit}`);
+}
+
+async function preparerCommande(produit) {
+    console.log(`Préparation de la commande pour ${produit}...`);
+    await attendre(2000);
+    console.log(`✔️ Commande de ${produit} préparée`);
+}
+
+async function livrerCommande(produit) {
+    console.log(`Livraison en cours pour ${produit}...`);
+    await attendre(3000);
+    console.log(`✔️ ${produit} livré !`);
+}
+
+async function passerCommande(produit) {
+    try {
+        await verifierStock(produit);
+        await validerPaiement(produit);
+        await preparerCommande(produit);
+        await livrerCommande(produit);
+        console.log(`✅ Commande de ${produit} terminée avec succès !`);
+    } catch (error) {
+        console.log(`❌ Erreur lors de la commande : ${error}`);
+    }
+}
+
+// Exécuter une commande
+passerCommande("Ordinateur Portable");
